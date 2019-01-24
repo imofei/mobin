@@ -1,0 +1,38 @@
+[app]
+    listen = "127.0.0.1:5200"
+    #mode: debug/test/release
+    mode = "release"
+    cron = true
+
+[databases]
+
+[databases.mysql.kcs]
+    host = "192.168.15.83"
+    port = 3306
+    database = "kcs_options"
+    username = "root"
+    password = "qsyhcd"
+    charset = "utf8mb4"
+    collation = "utf8mb4_general_ci"
+    parse_time = "true"
+    loc = "Asia%2FShanghai"
+    conn_max_lifetime = 120
+    max_idle_conns = 3
+    max_open_conns = 256
+
+[databases.redis.local]
+    host = "127.0.0.1"
+    port = 6379
+    password = ""
+    database = 0
+[databases.redis.local.pool]
+    max_idle = 3
+    max_active = 0
+    idle_timeout = 120
+
+[dingtalk]
+    corpID = "ding8fb7e0bb2679645835c2f4657eb6378f"
+    corpSecret = "3XV3O05-DWEhn5jbwjkkhFTvRBICIvwKD35VT4sd0ebRcHNVqS0b9B_9tV7oVwy5"
+
+[rate]
+    url = "https://kitchen.kucoin.com/v1/open/currencies?coins=BTC%2CETH%2CNEO%2CUSDT%2CKCS&lang=en_US"
