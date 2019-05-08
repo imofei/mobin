@@ -2,7 +2,7 @@ package crons
 
 import (
 	"log"
-	"gitlab.kucoin.net/golang/cron"
+	"github.com/imofei/gin-easy/comm/cron"
 )
 
 var (

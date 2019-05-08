@@ -22,6 +22,7 @@ func (t Test) NewController() router.Controller {
 	t.GetUser = getUser
 	t.CreateUser = createUser
 	t.TestAuth = TestAuth
+	t.Test1 = Test1
 	return t
 }
 
@@ -36,6 +37,18 @@ func createUser(c *gin.Context) {
 }
 
 func TestAuth(c *gin.Context) {
+
+	data := make(map[string]interface{})
+	data["lists"] = "test"
+	data["total"] = "100"
+	fmt.Println(c.Get("staff"))
+	fmt.Println(data)
+
+	response.SuccessJSON(c, data)
+
+}
+
+func Test1(c *gin.Context) {
 
 	data := make(map[string]interface{})
 	data["lists"] = "test"
